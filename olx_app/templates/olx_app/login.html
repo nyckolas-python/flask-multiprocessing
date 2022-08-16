@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Login to OLX Application: {% endblock %}
+
+{% block content %}
+
+<h2>Login to OLX Application:</h2>
+<form method="POST" action="">
+	{{ form.hidden_tag() }}
+	{{ form.username }}
+	{{ form.password }}
+	{{ form.submit }}
+</form>
+<br>
+
+{% endblock %}
