@@ -15,6 +15,7 @@
     <script>
         const onClickHandler = () => {
             event.target.parentElement.remove();
+            event.submit();
         }
     </script>
 
@@ -31,6 +32,7 @@
             <button class="btn btn-success">Обновить</button>
         </div>
     </div>
+    <form method="post" id="form">
     <div class="row mt-5 text-center">
         <div class="col-4 mx-auto">
             <ul class="list">
@@ -38,6 +40,7 @@
             </ul>
         </div>
     </div>
+    </form>
 </div>
 
 {% endblock %}
