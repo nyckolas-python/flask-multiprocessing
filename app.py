@@ -2,7 +2,7 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_debugtoolbar import DebugToolbarExtension
+# from flask_debugtoolbar import DebugToolbarExtension
 
 from config import DevelopementConfig
 
@@ -14,4 +14,4 @@ db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-toolbar = DebugToolbarExtension(app)
+# toolbar = DebugToolbarExtension(app)
