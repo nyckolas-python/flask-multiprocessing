@@ -55,11 +55,11 @@ def get_items() -> list:
 		return result
 
 
-if __name__ == '__main__':
-	start = time.time()
+# if __name__ == '__main__':
+# 	start = time.time()
 
-	res = get_items()
-	print(res)
+# 	res = get_items()
+# 	print(res)
 
-	end = time.time()
-	print('It took', (end - start), 'seconds')
+# 	end = time.time()
+# 	print('It took', (end - start), 'seconds')
