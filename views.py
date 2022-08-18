@@ -3,7 +3,7 @@ from flask import (render_template, request, redirect, \
                     url_for, flash, jsonify)
 from flask_login import login_required, login_user, logout_user
 
-from models import User, Announcements
+from models import User, Announcements, add_announcements
 from forms import LoginForm
 from utils import get_items
 
@@ -33,6 +33,7 @@ def olx():
     if request.is_json:
         if request.method == 'GET':
             items = get_items()
+            add_announcements(items[:5])
             # в самом парсере проверяем айди перед парсингом, после парсим и отдаём
-            return jsonify(items[:100])
+            return jsonify(items[:5])
     return render_template('olx.html')
