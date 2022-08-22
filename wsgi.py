@@ -6,3 +6,6 @@ from app import db
 import views
 
 app = application
+
+if __name__ == "__main__":
+    app.run()
