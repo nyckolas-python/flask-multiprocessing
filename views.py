@@ -38,7 +38,7 @@ def olx():
 
         if request.method == 'POST':          
             olx_id = request.get_json().get('olx_id')
-            print(olx_id)
+
             delete_announcement(str(olx_id))
            
     return render_template('olx.html')
