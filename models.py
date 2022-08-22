@@ -47,12 +47,13 @@ def add_announcements(items):
     for item in items:
         user_id = current_user.get_id()
         try:
-            new_announcement = Announcement(name=item.get('name'), price=item.get('price'), \
-                            image=item.get('image'), vendor_name=item.get('vendor_name'), \
-                            olx_id=item.get('olx_id'), user_id=user_id\
-                            )
-            db.session.add(new_announcement)
-            db.session.commit()
+            if item:
+                new_announcement = Announcement(name=item.get('name'), price=item.get('price'), \
+                                image=item.get('image'), vendor_name=item.get('vendor_name'), \
+                                olx_id=item.get('olx_id'), user_id=user_id\
+                                )
+                db.session.add(new_announcement)
+                db.session.commit()
         except Exception as e:
             print(e)
 
