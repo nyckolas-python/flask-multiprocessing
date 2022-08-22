@@ -3,7 +3,7 @@ from flask import (render_template, request, redirect, \
                     url_for, flash, jsonify)
 from flask_login import login_required, login_user, logout_user
 
-from models import User, Announcements, add_announcements
+from models import User, delete_announcement
 from forms import LoginForm
 from utils import get_items
 
@@ -27,13 +27,18 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/olx')
+@app.route('/olx', methods=['GET', 'POST'])
 @login_required
 def olx():
     if request.is_json:
         if request.method == 'GET':
             items = get_items()
-            add_announcements(items[:5])
-            # в самом парсере проверяем айди перед парсингом, после парсим и отдаём
-            return jsonify(items[:5])
+            
+            return jsonify(items)
+
+        if request.method == 'POST':          
+            olx_id = request.get_json().get('olx_id')
+            print(olx_id)
+            delete_announcement(str(olx_id))
+           
     return render_template('olx.html')
