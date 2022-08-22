@@ -33,7 +33,7 @@ def parse(url: str) -> dict:
 			vendor_name = ''
 			if user_id in (2, 3):
 				image = soup.select_one("div.swiper-zoom-container img[src]").get('src')
-			elif user_id == 3:
+			if user_id == 3:
 				vendor_name = soup.select_one("h4.css-1rbjef7-Text").text
 			
 			return {'olx_id': olx_id, 'name': name, 'price': price, 'image': image, 'vendor_name': vendor_name}
