@@ -6,6 +6,7 @@ $(document).ready(function(){
             type: 'GET',
             contentType: 'application/json',
             success: function (response) {
+                $("#olx").css("display", "block");
                 $.each(response, function(index) {
                     $('.list').append(
                         '<div class="row justify-content" style="margin: 15px;">' +
