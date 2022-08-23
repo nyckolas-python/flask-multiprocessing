@@ -3,7 +3,7 @@
 
 start:
 	export SECRET_KEY="SECRET_KEY" && \
-	poetry run python main.py
+	poetry run python wsgi.py
 
 update:
 	sudo apt update && poetry update
